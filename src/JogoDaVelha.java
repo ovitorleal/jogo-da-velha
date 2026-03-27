@@ -127,40 +127,34 @@ public class JogoDaVelha {
             int linha = leitor.nextInt();
             int coluna = leitor.nextInt();
 
-            // ===============================
+
             // VALIDAÇÃO DA JOGADA
-            // ===============================
             if (!jogadaValida(linha, coluna)) {
                 System.out.println("Jogada inválida! Tente novamente.");
                 continue; // volta pro início do loop
             }
 
-            // ===============================
             // REALIZA A JOGADA
-            // ===============================
             tabuleiro[linha][coluna] = jogador;
 
-            // ===============================
+
             // VERIFICA SE ALGUÉM GANHOU
-            // ===============================
             if (verificarVitoria(jogador)) {
                 mostrarTabuleiro();
                 System.out.println("\nJogador " + jogador + " venceu!");
                 break; // encerra o jogo
             }
 
-            // ===============================
+            
             // VERIFICA EMPATE
-            // ===============================
             if (empate()) {
                 mostrarTabuleiro();
                 System.out.println("\nEmpate!");
                 break;
             }
 
-            // ===============================
+        
             // TROCA DE JOGADOR
-            // ===============================
             if (jogador == 'X') {
                 jogador = 'O';
             } else {
